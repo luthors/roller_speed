@@ -1,0 +1,37 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head
+    th:replace="~{layout/fragments/head :: _head(title='Iniciar Sesión')}"
+  ></head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="text-center">Mi Perfil</h2>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nombre Completo</label>
+              <input
+                type="text"
+                class="form-control"
+                //th:value="${user.fullName}"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Correo Electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                th:value="${user.email}"
+                readonly
+              />
+            </div>
+            <a href="#" class="btn btn-primary w-100">Editar Perfil</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

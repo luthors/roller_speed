@@ -1,0 +1,38 @@
+<main th:fragment="_gallery" class="container py-5">
+    <h1 class="text-center mb-4">Galería Multimedia</h1>
+
+    <!-- Sección de imágenes -->
+    <h3 class="text-center my-4">Fotos de Entrenamientos y Eventos</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" th:each="i : ${#numbers.sequence(1, 6)}">
+        <div class="card shadow-sm">
+          <img
+            th:src="@{'/images/gallery' + ${i} + '.jpg'}"
+            class="card-img-top"
+            alt="Imagen de galería"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de videos -->
+    <h3 class="text-center my-5">Videos Destacados</h3>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="col">
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.youtube.com/embed/V-_O7nl0Ii0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </main>

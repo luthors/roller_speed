@@ -1,25 +1,25 @@
 package com.roller_speed.app.dashboard.model.entity;
 
-import java.time.LocalDate;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 @Entity
-@Table(name = "students")
-@Data
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nombre;
-    private LocalDate fechaNacimiento;
-    private String genero;
-    private String correo;
-    private String telefono;
-    private String metodoPago;
+@DiscriminatorValue("STUDENT")  // Define el tipo en la columna 'user_type'
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student extends User {
+
+    @NotNull(message = "Birthdate is required")
+    @Column(nullable = false)
+    private String birthDate;
+
+    @NotBlank(message = "Gender is required")
+    @Column(nullable = false, length = 10)
+    private String gender;
+
+    @Column(nullable = false)
+    private boolean active = true;
 }
