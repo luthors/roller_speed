@@ -44,3 +44,7 @@ Spring Data JPA (para interactuar con la base de datos).
 PostgreSQL Driver o MySQL Driver.
 
 Spring Boot DevTools (para recarga automática).
+
+![image](https://github.com/user-attachments/assets/08bb6f31-9c6c-42b8-988f-a2b389ddd67a)
+
+
