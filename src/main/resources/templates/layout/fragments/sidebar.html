@@ -1,0 +1,28 @@
+<nav th:fragment="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+  <div class="position-sticky">
+    <ul class="nav flex-column mt-4">
+      <li class="nav-item">
+        <a class="nav-link active" th:href="@{/students/dashboard}">
+          <i class="bi bi-house-door"></i> 📌 Inicio (Dashboard)
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students/schedule}"> <i class="bi bi-calendar"></i> 📅 Horarios </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students/payments}"> <i class="bi bi-credit-card"></i> 💳 Pagos </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students/progress}"> <i class="bi bi-bar-chart"></i> 📊 Progreso </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students/settings}"> <i class="bi bi-gear"></i> ⚙️ Configuración </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-danger" th:href="@{/logout}">
+          <i class="bi bi-box-arrow-right"></i> 🚪 Cerrar sesión
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

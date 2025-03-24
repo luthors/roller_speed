@@ -1,0 +1,10 @@
+<header th:fragment="header(student)" class="navbar navbar-dark bg-dark px-3">
+  <a class="navbar-brand" th:href="@{/students/dashboard}">
+    <img src="/images/icono_patin.ico" alt="Logo" width="30" height="30" class="d-inline-block align-text-top" />
+    <i class="bi bi-speedometer2"></i> Roller Speed
+  </a>
+  <div class="d-flex">
+    <span class="text-white me-3" th:text="${student.firstName} + ' ' + ${student.lastName}"></span>
+    <a th:href="@{/logout}" class="btn btn-danger">Cerrar Sesión</a>
+  </div>
+</header>

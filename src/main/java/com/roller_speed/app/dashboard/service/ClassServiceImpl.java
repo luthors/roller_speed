@@ -38,4 +38,9 @@ public class ClassServiceImpl implements IClassService {
     public void deleteClass(Long id) {
         classRepository.deleteById(id);
     }
+
+    @Override
+    public List<Class> getStudentSchedule(Long studentId) {
+        return classRepository.findByStudentsByStudentId(studentId);
+    }
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{layout/fragments/head :: _head(title='Horario de Clases')}"></head>
+  <body>
+    <div th:replace="~{layout/fragments/navbar :: _navbar}"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div th:replace="~{layout/fragments/sidebar :: sidebar}"></div>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <h2 class="mt-4">Horario de Clases</h2>
+
+          <!-- Filtros de Semana/Mes -->
+          <div class="d-flex justify-content-end mb-3">
+            <select class="form-select w-auto" id="filter" onchange="filterSchedule()">
+              <option value="week">Semana</option>
+              <option value="month">Mes</option>
+            </select>
+          </div>
+
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Clase</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Instructor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="clase : ${schedules}">
+                <td th:text="${clase.name}"></td>
+                <td th:text="${clase.scheduleDate}"></td>
+                <td th:text="${clase.scheduleDate}"></td>
+
+                <td th:text="${clase.instructor.name}"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Tabla de Horario (sin formato) -->
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function filterSchedule() {
+        let filterValue = document.getElementById("filter").value;
+        console.log("Filtro seleccionado:", filterValue);
+        // Aquí podrías agregar lógica para filtrar dinámicamente
+      }
+    </script>
+  </body>
+</html>

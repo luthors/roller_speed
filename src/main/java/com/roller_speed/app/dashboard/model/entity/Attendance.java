@@ -17,18 +17,17 @@ public class Attendance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Attendance date is required")
-    @Column(nullable = false)
+    
     private LocalDate attendanceDate;
 
     @ManyToOne
-    @JoinColumn(name = "class_id", nullable = false)
+    @JoinColumn(name = "class_id")
     private Class classSession;
 
     @ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
+    @JoinColumn(name = "student_id")
     private Student student;
 
-    @Column(nullable = false)
+    
     private boolean present;  // true = attended, false = absent
 }

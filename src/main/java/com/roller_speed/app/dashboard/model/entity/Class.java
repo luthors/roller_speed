@@ -18,16 +18,16 @@ public class Class {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Class name is required")
-    @Column(nullable = false, length = 100)
+    
+    @Column( length = 100)
     private String name;
 
-    @NotNull(message = "Schedule date is required")
-    @Column(nullable = false)
+
+    
     private LocalDateTime scheduleDate;
 
     @ManyToOne
-    @JoinColumn(name = "instructor_id", nullable = false)
+    @JoinColumn(name = "instructor_id")
     private Instructor instructor;
 
     @ManyToMany

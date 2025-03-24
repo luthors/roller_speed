@@ -5,8 +5,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "roles")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role {
@@ -15,6 +14,6 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false, length = 50)
-    private String name;  // Example: ADMIN, INSTRUCTOR, CANDIDATE
+    @Column(length = 50)
+    private String name;  // Example: ADMIN_ROLE, INSTRUCTOR_ROLE, CANDIDATE_ROLE, STUDENT_ROLE
 }

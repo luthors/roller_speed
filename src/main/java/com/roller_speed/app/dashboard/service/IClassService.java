@@ -10,4 +10,5 @@ public interface IClassService {
     List<Class> getClassesByInstructorId(Long instructorId);
     Class saveClass(Class classSession);
     void deleteClass(Long id);
+    List<Class> getStudentSchedule(Long studentId);
 }

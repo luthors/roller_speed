@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{layout/fragments/head :: head(title='Inicio')}"></head>
+  <body>
+    <!-- Incluir Header -->
+    <div th:replace="~{layout/fragments/header :: header(student=${student})}"></div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Incluir Sidebar -->
+        <div th:replace="~{layout/fragments/sidebar :: sidebar}"></div>
+
+        <!-- Contenido principal -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <h2 class="mt-4">Bienvenido, <span th:text="${student.firstName}"></span></h2>
+
+          <div class="row mt-4">
+            <!-- Tarjeta de Clases -->
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Mis Clases</h5>
+                  <p class="card-text">Revisa tu horario de clases y próximas sesiones.</p>
+                  <a th:href="@{/students/schedule}" class="btn btn-primary">Ver Horario</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta de Pagos -->
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Pagos Pendientes</h5>
+                  <p class="card-text">Consulta el estado de tus pagos y facturación.</p>
+                  <a th:href="@{/students/payments}" class="btn btn-warning">Ver Pagos</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta de Progreso -->
+            <div class="col-md-6 mt-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Mi Progreso</h5>
+                  <p class="card-text">Consulta tus estadísticas y avances en clases.</p>
+                  <a th:href="@{/students/progress}" class="btn btn-success">Ver Progreso</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta de Configuración -->
+            <div class="col-md-6 mt-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Configuración</h5>
+                  <p class="card-text">Edita tu información personal y preferencias.</p>
+                  <a th:href="@{/students/settings}" class="btn btn-secondary">Ir a Configuración</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

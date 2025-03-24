@@ -10,4 +10,5 @@ public interface IStudentService {
     Optional<Student> getStudentById(Long id);
     Student saveStudent(Student student);
     void deleteStudent(Long id);
+    
 }
